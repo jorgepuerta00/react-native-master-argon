@@ -1,0 +1,59 @@
+{
+    "appName": "Argon",
+    "navigation": {
+      "home": "Inicio",
+      "profile": "Perfil",
+      "settings": "Configuración",
+      "headquarters": "Sedes"
+    },
+    "onboarding": {        
+        "title": "Cargando",
+        "subtitle": "Aplicación...",
+        "loading": "Estamos cargando tus componentes, por favor espere!"
+    },
+    "home": {
+        "title": "Inicio",
+        "welcome": "Bienvenido a %{appName}!",
+        "Option1": "Opción 1",
+        "Option2": "Opción 2"
+    },
+    "profile": {
+        "title": "Perfil",
+        "signInTitle": "Inicia sesión con",
+		"signInSubtitle": "O inicia de la manera clásica",
+		"Email": "Correo",
+		"Password": "Contraseña",
+		"login": "EMPEZAR",
+		"createAccount": "Nuevo usuario",
+		"forgotPassword": "Recuperar contraseña"
+    },
+    "settings": {
+        "title": "Configuración",
+		"titleSetionOne":"Configuraciones recomendadas",
+		"descriptionSetionOne":"Estas son las configuraciones más importantes",
+		"titleSetionTwo":"Configuraciones de pago",
+		"descriptionSetionTwo":"Estas también son configuraciones importantes",
+		"titleSetionThree":"Configuración de privacidad",
+		"descriptionSetionThree":"Tercera configuración más importante",
+        "face": "Use FaceID para iniciar sesión",
+		"autolock": "Seguridad de bloqueo automático",
+		"notifications": "Notificaciones",
+		"Payment": "Administrar opciones de pago",
+		"gift": "Administrar tarjetas de regalo",
+		"agreement": "Acuerdo de Usuario",
+		"privacy": "Privacidad",
+		"about": "Acerca de"
+    },
+    "headquarters": {
+        "title": "Sedes",
+        "welcome": "Bienvenido a %{appName}!",
+        "Option1": "Opción 1",
+        "Option2": "Opción 2" 
+    },
+    "services": {
+        "title":"Servicios de belleza"
+    },
+    "appointment": {
+        "title":"Cita"
+    }
+  }
