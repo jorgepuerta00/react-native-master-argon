@@ -177,7 +177,7 @@ const HeadquartersStack = createStackNavigator({
     screen: HeadquartersScreen,
     navigationOptions: ({ navigation }) => ({
       header: (
-        <Header options search title={i18n.t('headquarters.title')} navigation={navigation} />
+        <Header search title={i18n.t('headquarters.title')} navigation={navigation} />
       ),
     })
   },
@@ -185,7 +185,7 @@ const HeadquartersStack = createStackNavigator({
     screen: ServicesScreen,
     navigationOptions: ({ navigation }) => ({
       header: (
-        <Header options search title={i18n.t('services.title')} navigation={navigation} />
+        <Header search title={i18n.t('services.title')} navigation={navigation} />
       ),
     })
   },
@@ -193,7 +193,7 @@ const HeadquartersStack = createStackNavigator({
     screen: AppointmentScreen,
     navigationOptions: ({ navigation }) => ({
       header: (
-        <Header options search title={i18n.t('appointment.title')} navigation={navigation} />
+        <Header search title={i18n.t('appointment.title')} navigation={navigation} />
       ),
     })
   },
@@ -259,9 +259,24 @@ const AppStack = createBottomTabNavigator({
       ),
     })
   },
-},{
+},
+{
   initialRouteName: "Home",
   order: ["Home","Headquarters","Profile","Settings"],
+  animationEnabled: true,
+  swipeEnabled: true,
+  tabBarPosition: 'bottom',
+  tabBarOptions: {
+      style: {
+          ...Platform.select({
+              android: {
+                  backgroundColor: 'white'
+              }
+          })
+      },
+      showLabel: false,
+      showIcon: true,
+  }
 });
 
 const AppContainer = createAppContainer(AppStack);

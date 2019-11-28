@@ -2,6 +2,8 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { Alert, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { ExpandableCalendar, AgendaList, CalendarProvider, LocaleConfig } from 'react-native-calendars';
+import ThumbnailButton from '../../components/ThumbnailButton';
+import { Block } from "galio-framework";
 import moment from 'moment';
 require("moment/min/locales.min");
 
@@ -16,44 +18,75 @@ LocaleConfig.locales['es'] = {
   today: 'Hoy'
 };
 
-const futureDates = getFutureDates();
-const dates = futureDates;
+const date = new Date(); 
+const dateString = moment(date).format('YYYY-MM-DD');
 
-function getFutureDates() {
-    const array = [];  
-    const date = new Date(); 
-    const dateString = moment(date).format('YYYY-MM-DD');
-    array.push(dateString);  
-    return array;
-}
+const people = [
+  {
+    id: "1",
+    name: "Jasmin",
+    image: "https://pm1.narvii.com/7267/c4e428397d78ff2f7845ef33dccffbee7189dbd0r1-600-300v2_128.jpg",
+  },
+  {
+    id: "2",
+    name: "Jillian",
+    image: "https://pm1.narvii.com/6565/75f7a8c2c996465d021505983a8f4bdf97db7240_128.jpg",
+  },
+  {
+    id: "3",
+    name: "Fiona",
+    image: "https://pm1.narvii.com/7189/0a7614f590e2782a90ad18a488e508028d34a52cr1-812-805v2_128.jpg",
+  },
+  {
+    id: "4",
+    name: "Briana",
+    image: "https://pbs.twimg.com/profile_images/344513261566776895/4374a7d72ececce16af083fc6ea50d01.jpeg",
+  },
+  {
+    id: "5",
+    name: "Lexie",
+    image: "https://a.wattpad.com/useravatar/imthanos_420.256.933081.jpg",
+  },
+  {
+    id: "6",
+    name: "Rose",
+    image: "https://pm1.narvii.com/6846/14df187fd7761a7ddb7597e08b43f10745e0abd6v2_128.jpg",
+  },
+  {
+    id: "7",
+    name: "Edith",
+    image: "https://a.wattpad.com/useravatar/AkaneTendo531.256.387075.jpg",
+  }
+];
 
-const ITEMS = [
-  {title: dates[0], data: [
-                            {hour: '12:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
-                            {hour: '01:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
-                            {hour: '02:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
-                            {hour: '03:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
-                            {hour: '04:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
-                            {hour: '05:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},                        
-                            {hour: '06:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
-                            {hour: '07:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
-                            {hour: '08:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
-                            {hour: '09:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true}, 
-                            {hour: '10:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true}, 
-                            {hour: '11:00 am', duration: '', title: i18n.t('appointment.busy'), avaible:false},
-                            {hour: '12:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
-                            {hour: '01:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
-                            {hour: '02:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false},
-                            {hour: '03:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
-                            {hour: '04:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
-                            {hour: '05:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false},
-                            {hour: '06:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
-                            {hour: '07:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
-                            {hour: '08:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
-                            {hour: '09:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
-                            {hour: '10:00 pm', duration: '', title: i18n.t('appointment.avaible'), avaible:true}, 
-                            {hour: '11:00 pm', duration: '', title: i18n.t('appointment.avaible'), avaible:true}
-                        ]},  
+const ITEMS = [{
+  title: dateString, 
+  data: [
+          {hour: '12:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
+          {hour: '01:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
+          {hour: '02:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
+          {hour: '03:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
+          {hour: '04:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
+          {hour: '05:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},                        
+          {hour: '06:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
+          {hour: '07:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
+          {hour: '08:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
+          {hour: '09:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true}, 
+          {hour: '10:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true}, 
+          {hour: '11:00 am', duration: '', title: i18n.t('appointment.busy'), avaible:false},
+          {hour: '12:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
+          {hour: '01:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
+          {hour: '02:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false},
+          {hour: '03:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
+          {hour: '04:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
+          {hour: '05:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false},
+          {hour: '06:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
+          {hour: '07:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
+          {hour: '08:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
+          {hour: '09:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
+          {hour: '10:00 pm', duration: '', title: i18n.t('appointment.avaible'), avaible:true}, 
+          {hour: '11:00 pm', duration: '', title: i18n.t('appointment.avaible'), avaible:true}
+      ]},  
 ];
 
 export default class Appointment extends Component {
@@ -62,14 +95,11 @@ export default class Appointment extends Component {
         super(props);
         this.state = {        
             date: '',
-        };       
-
-        moment.locale(i18n.currentLocale())
+        };
 
         if(i18n.currentLocale() == 'es'){
           LocaleConfig.defaultLocale = i18n.currentLocale();
         }
-
     }
 
   componentDidMount() {
@@ -87,7 +117,7 @@ export default class Appointment extends Component {
       date: moment(selectedDate).format('YYYY-MM-DD')
     });
 
-    ITEMS[0].title = moment(selectedDate).format('YYYY-MM-DD');
+    ITEMS.title = moment(selectedDate).format('YYYY-MM-DD');
   }
 
   onMonthChange = (/* month, updateSource */) => {
@@ -178,24 +208,29 @@ export default class Appointment extends Component {
 
   render() {    
     return (
-      <CalendarProvider
-        date={this.state.date} 
-        onDateChanged={this.onDateChanged} 
-        onMonthChange={this.onMonthChange}
-        theme={{todayButtonTextColor: '#0059ff'}} 
-        showTodayButton 
-        disabledOpacity={0.6}>
-        <ExpandableCalendar 
-          firstDay={1}           
-          pastScrollRange={0} 
-          futureScrollRange={2} 
-          markedDates={this.getMarkedDates()}/>
-        <AgendaList 
-            sections={ITEMS} 
-            extraData={this.state} 
-            renderItem={this.renderItem}             
-            sectionStyle={styles.section}/>
-      </CalendarProvider>
+      <Block flex>
+        <ThumbnailButton 
+          data={people}>
+        </ThumbnailButton>        
+        <CalendarProvider
+          date={this.state.date} 
+          onDateChanged={this.onDateChanged} 
+          onMonthChange={this.onMonthChange}
+          theme={{todayButtonTextColor: '#0059ff'}} 
+          //showTodayButton
+          disabledOpacity={0.6}>
+          <ExpandableCalendar 
+            firstDay={1}           
+            pastScrollRange={0} 
+            futureScrollRange={2} 
+            markedDates={this.getMarkedDates()}/>
+          <AgendaList 
+              sections={ITEMS} 
+              extraData={this.state} 
+              renderItem={this.renderItem}             
+              sectionStyle={styles.section}/>
+        </CalendarProvider>
+      </Block>
     );
   }
 }
