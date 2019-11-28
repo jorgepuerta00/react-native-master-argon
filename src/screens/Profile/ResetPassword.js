@@ -7,6 +7,9 @@ import { Button } from "../../components";
 import argonTheme from "../../constants/Theme";
 import Images from "../../constants/Images";
 
+// Internationalization
+import i18n from '../../i18n';
+
 const { height, width } = Dimensions.get("screen");
 
 class ResetPassword extends React.Component {
@@ -28,51 +31,51 @@ class ResetPassword extends React.Component {
                 <Block style={styles.title}>
                   <Block>
                     <Text color="white" size={40}>
-                      Reset your
+                    {i18n.t('Resetpassword.forgotPasswordTitleOne')}
                     </Text>
                   </Block>
                   <Block>
                     <Text color="white" size={40}>
-                      Password?
+                    {i18n.t('Resetpassword.forgotPasswordTitleTwo')}
                     </Text>
                   </Block>
                   <Block style={styles.subTitle}>
                     <Text color="white" size={16}>
-                      Please follow next steps
+                    {i18n.t('Resetpassword.steps')}
                     </Text>
                   </Block>
                   <Block>
                     <Block width={width * 0.8}>
                       <Input
                         borderless
-                        placeholder="Code"
+                        placeholder={i18n.t('Resetpassword.code')}
                       />
                     </Block>
                     <Block width={width * 0.8}>
                     <Input
                         password
                         borderless
-                        placeholder="New Password"
+                        placeholder={i18n.t('Resetpassword.newPassword')}
                       />
                       <Input
                         password
                         borderless
-                        placeholder="Confirm Password"
+                        placeholder={i18n.t('Resetpassword.confirmPassword')}
                       />
                       <Block row style={styles.passwordCheck}>
                         <Text size={12} color={argonTheme.COLORS.MUTED}>
-                          password strength:
+                        {i18n.t('Resetpassword.passwordStrength')}
                         </Text>
                         <Text bold size={12} color={argonTheme.COLORS.SUCCESS}>
                           {" "}
-                          strong
+                          {i18n.t('Resetpassword.passwordStrong')}
                         </Text>
                       </Block>
                     </Block>
                     <Block middle>
                       <Button color="primary" style={styles.createButton} onPress={() => navigation.navigate("Profile")}>
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                          DONE
+                        {i18n.t('Resetpassword.done')}
                         </Text>
                       </Button>
                     </Block>

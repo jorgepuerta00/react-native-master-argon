@@ -4,6 +4,9 @@ import { Block, Text, theme, Icon } from "galio-framework";
 
 import materialTheme from '../../constants/Theme';
 
+// Internationalization
+import i18n from '../../i18n';
+
 export default class Settings extends React.Component {
   state = {};
 
@@ -43,20 +46,20 @@ export default class Settings extends React.Component {
 
   render() {
     const recommended = [
-      { title: "Use FaceID to sign in", id: "face", type: "switch" },
-      { title: "Auto-Lock security", id: "autolock", type: "switch" },
-      { title: "Notifications", id: "Notifications", type: "button" },
+      { title: i18n.t('settings.face'), id: "face", type: "switch" },
+      { title: i18n.t('settings.autolock'), id: "autolock", type: "switch" },
+      { title: i18n.t('settings.notifications'), id: "Notifications", type: "button" },
     ];
 
     const payment = [
-      { title: "Manage Payment Options", id: "Payment", type: "button" },
-      { title: "Manage Gift Cards", id: "gift", type: "button" },
+      { title: i18n.t('settings.payment'), id: "Payment", type: "button" },
+      { title: i18n.t('settings.gift'), id: "gift", type: "button" },
     ];
     
     const privacy = [
-      { title: "User Agreement", id: "Agreement", type: "button" },
-      { title: "Privacy", id: "Privacy", type: "button" },
-      { title: "About", id: "About", type: "button" },
+      { title: i18n.t('settings.agreement'), id: "Agreement", type: "button" },
+      { title: i18n.t('settings.privacy'), id: "Privacy", type: "button" },
+      { title: i18n.t('settings.about'), id: "About", type: "button" },
     ];
 
     return (
@@ -70,20 +73,20 @@ export default class Settings extends React.Component {
           ListHeaderComponent={
             <Block style={styles.title}>
               <Text bold center size={theme.SIZES.BASE} style={{ paddingBottom: 5 }}>
-                Recommended Settings
+                {i18n.t('settings.titleSetionOne')}
               </Text>
               <Text center muted size={12}>
-                These are the most important settings
+                {i18n.t('settings.descriptionSetionOne')}
               </Text>
             </Block>
           }
         />
         <Block style={styles.title}>
           <Text bold center size={theme.SIZES.BASE} style={{ paddingBottom: 5 }}>
-          Payment Settings
+            {i18n.t('settings.titleSetionTwo')}
           </Text>
           <Text center muted size={12}>
-          These are also important settings
+            {i18n.t('settings.descriptionSetionTwo')}
           </Text>
         </Block>
         <FlatList
@@ -93,10 +96,10 @@ export default class Settings extends React.Component {
         />
         <Block style={styles.title}>
           <Text bold center size={theme.SIZES.BASE} style={{ paddingBottom: 5 }}>
-          Privacy Settings
+            {i18n.t('settings.titleSetionThree')}
           </Text>
           <Text center muted size={12}>
-          Third most important settings
+            {i18n.t('settings.descriptionSetionThree')}
           </Text>
         </Block>
         <FlatList

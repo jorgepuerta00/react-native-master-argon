@@ -2,13 +2,11 @@ import React from 'react';
 import { Image } from 'react-native';
 
 import { Asset } from 'expo-asset';
-import SplashScreen from './screens/Onboarding/Onboarding' 
-
 import { Block, GalioProvider } from 'galio-framework';
 
-import { Images, articles, argonTheme } from './constants';
-
-import Screens from './navigation/MainTabNavigator';
+import { Images, articles, argonTheme } from './src/constants';
+import Screens from './src/navigation/MainTabNavigator';
+import SplashScreen from './src/screens/Onboarding/Onboarding' 
 
 // cache app images
 const assetImages = [

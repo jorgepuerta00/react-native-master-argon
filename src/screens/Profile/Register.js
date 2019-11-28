@@ -7,6 +7,9 @@ import { Images, argonTheme } from "../../constants";
 
 import SocialButtons from '../../components/SocialButtons';
 
+// Internationalization
+import i18n from '../../i18n';
+
 const { width, height } = Dimensions.get("screen");
 
 class Register extends React.Component {
@@ -26,14 +29,14 @@ class Register extends React.Component {
             <Block style={styles.registerContainer}>
               <Block flex={0.25} middle style={styles.socialConnect}>
                 <Text color="#8898AA" size={12}>
-                  Sign up with
+                  {i18n.t('register.signInTitle')}
                 </Text>
                 <SocialButtons/>
               </Block>
               <Block flex>
                 <Block flex={0.17} middle>
                   <Text color="#8898AA" size={12}>
-                    Or sign up the classic way
+                  {i18n.t('register.signInSubtitle')}
                   </Text>
                 </Block>
                 <Block flex center>
@@ -45,7 +48,7 @@ class Register extends React.Component {
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
                         borderless
-                        placeholder="Name"
+                        placeholder={i18n.t('register.name')}
                         iconContent={
                           <Icon
                             size={16}
@@ -60,7 +63,7 @@ class Register extends React.Component {
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
                         borderless
-                        placeholder="Email"
+                        placeholder={i18n.t('register.email')}
                         iconContent={
                           <Icon
                             size={16}
@@ -76,7 +79,7 @@ class Register extends React.Component {
                       <Input
                         password
                         borderless
-                        placeholder="Password"
+                        placeholder={i18n.t('register.password')}
                         iconContent={
                           <Icon
                             size={16}
@@ -89,11 +92,11 @@ class Register extends React.Component {
                       />
                       <Block row style={styles.passwordCheck}>
                         <Text size={12} color={argonTheme.COLORS.MUTED}>
-                          password strength:
+                        {i18n.t('register.passwordStrength')}
                         </Text>
                         <Text bold size={12} color={argonTheme.COLORS.SUCCESS}>
                           {" "}
-                          strong
+                          {i18n.t('register.passwordStrong')}
                         </Text>
                       </Block>
                     </Block>
@@ -103,23 +106,23 @@ class Register extends React.Component {
                           borderWidth: 3
                         }}
                         color={argonTheme.COLORS.PRIMARY}
-                        label="I agree with the"
+                        label={i18n.t('register.agreementText')}
                       />
                       <Button
-                        style={{ width: 100 }}
+                        style={{ width: 130 }}
                         color="transparent"
                         textStyle={{
                           color: argonTheme.COLORS.PRIMARY,
                           fontSize: 14
                         }}
                       >
-                        Privacy Policy
+                        {i18n.t('register.privacyPolicy')}
                       </Button>
                     </Block>
                     <Block middle>
                       <Button color="primary" style={styles.createButton} onPress={() => navigation.navigate("Profile")}>
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                          CREATE ACCOUNT
+                        {i18n.t('register.createAccount')}
                         </Text>
                       </Button>
                     </Block>

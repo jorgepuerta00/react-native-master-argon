@@ -6,6 +6,9 @@ import { Button } from "../../components";
 import { Images, argonTheme } from "../../constants";
 import { HeaderHeight } from "../../constants/utils";
 
+// Internationalization
+import i18n from '../../i18n';
+
 const { width, height } = Dimensions.get("screen");
 
 const thumbMeasure = (width - 48 - 32) / 3;
@@ -42,13 +45,13 @@ class Profile extends React.Component {
                       small
                       style={{ backgroundColor: argonTheme.COLORS.INFO }}
                     >
-                      CONNECT
+                      {i18n.t('profile.connect')}
                     </Button>
                     <Button
                       small
                       style={{ backgroundColor: argonTheme.COLORS.DEFAULT }}
                     >
-                      MESSAGE
+                      {i18n.t('profile.message')}
                     </Button>
                   </Block>
                   <Block row space="between">
@@ -61,7 +64,7 @@ class Profile extends React.Component {
                       >
                         2K
                       </Text>
-                      <Text size={12}>Orders</Text>
+                      <Text size={12}>{i18n.t('profile.orders')}</Text>
                     </Block>
                     <Block middle>
                       <Text
@@ -72,7 +75,7 @@ class Profile extends React.Component {
                       >
                         10
                       </Text>
-                      <Text size={12}>Photos</Text>
+                      <Text size={12}>{i18n.t('profile.photos')}</Text>
                     </Block>
                     <Block middle>
                       <Text
@@ -83,7 +86,7 @@ class Profile extends React.Component {
                       >
                         89
                       </Text>
-                      <Text size={12}>Comments</Text>
+                      <Text size={12}>{i18n.t('profile.comments')}</Text>
                     </Block>
                   </Block>
                 </Block>
@@ -105,8 +108,7 @@ class Profile extends React.Component {
                       color="#525F7F"
                       style={{ textAlign: "center" }}
                     >
-                      An artist of considerable range, Jessica name taken by
-                      Melbourne …
+                      {i18n.t('profile.text')}
                     </Text>
                     <Button
                       color="transparent"
@@ -116,7 +118,7 @@ class Profile extends React.Component {
                         fontSize: 16
                       }}
                     >
-                      Show more
+                      {i18n.t('profile.showMore')}
                     </Button>
                   </Block>
                   <Block
@@ -124,7 +126,7 @@ class Profile extends React.Component {
                     style={{ paddingVertical: 14, alignItems: "baseline" }}
                   >
                     <Text bold size={16} color="#525F7F">
-                      Album
+                    {i18n.t('profile.album')}
                     </Text>
                   </Block>
                   <Block
@@ -136,7 +138,7 @@ class Profile extends React.Component {
                       color="transparent"
                       textStyle={{ color: "#5E72E4", fontSize: 12 }}
                     >
-                      View all
+                      {i18n.t('profile.viewAll')}
                     </Button>
                   </Block>
                   <Block style={{ paddingBottom: -HeaderHeight * 2 }}>

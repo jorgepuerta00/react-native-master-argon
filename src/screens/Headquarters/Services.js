@@ -7,65 +7,55 @@ import { Block, theme } from "galio-framework";
 //argon
 import { Card } from "../../components/";
 
-const { width } = Dimensions.get("screen");
+// Internationalization
+import i18n from '../../i18n';
 
-const thumbMeasure = (width - 48 - 32) / 3;
+const { width } = Dimensions.get("screen");
+const cardWidth = width - theme.SIZES.BASE * 2;
 
 const ITEMS = [
   {
     data: [{
-            title: "Spa and Health Center",
+            title: i18n.t('services.serviceOne'),
             image: "http://www.lasplash.com/uploads//369f/4f5053c92d15e-spring-forward-with-glowing-skin-thanks-to-dr.-murad-murad-spa-all-inclusive-health-canter-medical-group-shows-you-how-to-become-healthy-happy-and-gorgeous-and-stay-that-way-1.jpg",
-            cta: 'Check availability', 
+            cta: i18n.t('services.available'), 
             horizontal: true,
           },
           {
-            title: "Hair & Makeup",
+            title: i18n.t('services.serviceTwo'),
             image: "http://www.norbertopeluqueria.com/img/0240/083.jpg",
-            cta: 'Check availability', 
+            cta: i18n.t('services.available'),
             horizontal: true,
           }]
   },
   {
     data: [{    
-            title: "Cosmetic Dentist",
+      title: i18n.t('services.serviceThree'),
             image: "https://culturaempleo.com/wp-content/uploads/2018/09/consultorio-odontologico.jpg",
-            cta: 'Check availability', 
+            cta: i18n.t('services.available'),
             horizontal: true, 
           },
           {
-            title: "Massage Therapy",
+            title: i18n.t('services.serviceFour'),
             image: "https://www.naturalhealers.com/wp-content/uploads/2016/10/massage-therapy-tuition.jpg",
-            cta: 'Check availability', 
+            cta: i18n.t('services.available'),
             horizontal: true,      
           }]
   },
   {
     data: [{
-            title: "Dry Clean and Laundry",
+            title: i18n.t('services.serviceFive'),
             image: "http://riamichelle.com/wp-content/uploads/Miami-Fashion-Blogger-Inkkas-Laundromat.jpg",
-            cta: 'Check availability', 
+            cta: i18n.t('services.available'),
             horizontal: true,      
           },
           {
-            title: "Dog Daycare, Board, Groom",
+            title: i18n.t('services.serviceSix'),
             image: "https://www.hthproject.com//upload/DI/LG/6/DIListing-15286-Photo1.jpg",
-            cta: 'Check availability', 
+            cta: i18n.t('services.available'),
             horizontal: true,      
           }]
   }
-];
-
-const cardWidth = width - theme.SIZES.BASE * 2;
-const categories = [
-  {
-    title: "Music Album",
-    description:
-      "Rock music is a genre of popular music. It developed during and after the 1960s in the United Kingdom.",
-    image:
-      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?fit=crop&w=840&q=80",
-    price: "$125"
-  },
 ];
 
 class Services extends React.Component {

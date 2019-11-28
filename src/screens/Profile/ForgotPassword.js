@@ -7,6 +7,9 @@ import { Button } from "../../components";
 import argonTheme from "../../constants/Theme";
 import Images from "../../constants/Images";
 
+// Internationalization
+import i18n from '../../i18n';
+
 const { height, width } = Dimensions.get("screen");
 
 class ForgotPassword extends React.Component {
@@ -28,30 +31,30 @@ class ForgotPassword extends React.Component {
                 <Block style={styles.title}>
                   <Block>
                     <Text color="white" size={40}>
-                      Forgot your
+                    {i18n.t('forgotpassword.forgotPasswordTitleOne')}
                     </Text>
                   </Block>
                   <Block>
                     <Text color="white" size={40}>
-                      Password?
+                    {i18n.t('forgotpassword.forgotPasswordTitleTwo')}
                     </Text>
                   </Block>
                   <Block style={styles.subTitle}>
                     <Text color="white" size={16}>
-                      Please follow next steps
+                    {i18n.t('forgotpassword.steps')}
                     </Text>
                   </Block>
                   <Block>
                     <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                       <Input
                         borderless
-                        placeholder="Type your email"
+                        placeholder={i18n.t('forgotpassword.typeEmail')}
                       />
                     </Block>
                     <Block middle>
                       <Button color="primary" style={styles.createButton} onPress={() => navigation.navigate("ResetPassword")}>
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                          SEND CODE
+                        {i18n.t('forgotpassword.sendCode')}
                         </Text>
                       </Button>
                     </Block>

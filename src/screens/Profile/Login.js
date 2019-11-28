@@ -7,9 +7,12 @@ import { Images, argonTheme } from "../../constants";
 
 import SocialButtons from '../../components/SocialButtons';
 
+// Internationalization
+import i18n from '../../i18n';
+
 const { height, width } = Dimensions.get("screen");
 
-class LoginTwo extends React.Component {
+class Login extends React.Component {
 
   goToScreen = nameScreen => {
     this.props.navigation.navigate(nameScreen)        
@@ -30,19 +33,19 @@ class LoginTwo extends React.Component {
           <Block flex middle space="between" style={styles.padded}>
             <Block flex={0.25} middle >
               <Text style={styles.textSignIn} middle>
-                Sign in with
+                {i18n.t('login.signInTitle')}
               </Text>
               <SocialButtons/>
             </Block>            
             <Block flex={0.25} middle>
               <Text style={styles.textSignIn}>
-                Or sign in the classic way
+              {i18n.t('login.signInSubtitle')}
               </Text>
               <Block flex>
                 <Block width={width * 0.8} style={{ marginBottom: 15 }}>
                   <Input
                     borderless
-                    placeholder="Email"
+                    placeholder={i18n.t('login.email')}
                     iconContent={
                       <Icon
                         size={16}
@@ -58,7 +61,7 @@ class LoginTwo extends React.Component {
                   <Input
                     password
                     borderless
-                    placeholder="Password"
+                    placeholder={i18n.t('login.password')}
                     iconContent={
                       <Icon
                         size={16}
@@ -74,16 +77,16 @@ class LoginTwo extends React.Component {
                   <Block middle>
                     <Button color="primary" style={styles.createButton} onPress={() => navigation.navigate("Profile")}>
                       <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                        LOGIN
+                        {i18n.t('login.login')}
                       </Text>
                     </Button>                  
                   </Block>
                   <Block style={styles.containerSignUp}>
                     <Text style={styles.text} onPress={() => navigation.navigate("Register")}>
-                      Create Account
+                      {i18n.t('login.createAccount')}
                     </Text>
                     <Text style={styles.text} onPress={() => navigation.navigate("ForgotPassword")}>
-                      Forgot Password?
+                      {i18n.t('login.forgotPassword')}
                     </Text>
                   </Block>
                 </Block>
@@ -138,4 +141,4 @@ text: {
 },
 });
 
-export default LoginTwo;
+export default Login;

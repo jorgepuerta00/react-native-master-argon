@@ -8,6 +8,9 @@ import Input from './Input';
 import Tabs from './Tabs';
 import argonTheme from '../constants/Theme';
 
+// Internationalization
+import i18n from '../i18n';
+
 const { height, width } = Dimensions.get('window');
 const iPhoneX = () => Platform.OS === 'ios' && (height === 812 || width === 812 || height === 896 || width === 896);
 
@@ -129,7 +132,7 @@ class Header extends React.Component {
         right
         color="black"
         style={styles.search}
-        placeholder="What are you looking for?"
+        placeholder={i18n.t('header.search')}
         placeholderTextColor={'#8898AA'}
         onFocus={() => navigation.navigate('Pro')}
         iconContent={<Icon size={16} color={theme.COLORS.MUTED} name="search-zoom-in" family="ArgonExtra" />}
@@ -144,13 +147,13 @@ class Header extends React.Component {
         <Button shadowless style={[styles.tab, styles.divider]} onPress={() => navigation.navigate('Pro')}>
           <Block row middle>
             <Icon name="calendar-date" family="ArgonExtra" style={{ paddingRight: 8 }} color={argonTheme.COLORS.ICON} />
-            <Text size={16} style={styles.tabTitle}>{optionLeft || 'Meetings'}</Text>
+            <Text size={16} style={styles.tabTitle}>{optionLeft || i18n.t('header.option1')}</Text>
           </Block>
         </Button>
         <Button shadowless style={styles.tab} onPress={() => navigation.navigate('Pro')}>
           <Block row middle>
             <Icon size={16} name="ic_mail_24px" family="ArgonExtra" style={{ paddingRight: 8 }} color={argonTheme.COLORS.ICON}/>
-            <Text size={16} style={styles.tabTitle}>{optionRight || 'Notifications'}</Text>
+            <Text size={16} style={styles.tabTitle}>{optionRight || i18n.t('header.option2')}</Text>
           </Block>
         </Button>
       </Block>

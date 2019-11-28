@@ -6,6 +6,9 @@ const { height, width } = Dimensions.get('screen');
 import { Images, argonTheme } from '../../constants';
 import { HeaderHeight } from "../../constants/utils";
 
+// Internationalization
+import i18n from '../../i18n';
+
 export default class Pro extends React.Component {
   render() {
     const { navigation } = this.props;
@@ -38,9 +41,6 @@ export default class Pro extends React.Component {
                   </Block>
                 </Block>
               </Block>
-              <Text size={16} color='rgba(255,255,255,0.6)' style={{ marginTop: 35 }}>
-                Take advantage of all the features and screens made upon Galio Design System, coded on React Native for both.
-              </Text>
               <Block row style={{ marginTop: theme.SIZES.BASE * 1.5, marginBottom: theme.SIZES.BASE * 4 }}>
                 <Image
                   source={Images.iOSLogo}
@@ -54,7 +54,7 @@ export default class Pro extends React.Component {
                 style={styles.button}
                 color={argonTheme.COLORS.INFO}
                 onPress={() => navigation.navigate('Home')}>
-                <Text bold color={theme.COLORS.WHITE}>COMING SOON</Text>
+                <Text bold color={theme.COLORS.WHITE}>{i18n.t('pro.comingSoon')}</Text>
               </Button>
             </Block>
           </Block>

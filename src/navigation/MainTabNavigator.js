@@ -5,12 +5,12 @@ import { createStackNavigator, createBottomTabNavigator, createAppContainer } fr
 import { Block } from "galio-framework";
 
 // screens Tab Bar
-import HomeScreen from '../screens/Home/Home';
+import HomeScreen from '../screens/Onboarding/Pro';
 import ProfileScreen from '../screens/Profile/Profile';
 import SetttingsScreen from '../screens/Settings/Settings';
 
 // screens Login
-import LoginScreen from '../screens/Profile/LoginTwo';
+import LoginScreen from '../screens/Profile/Login';
 import RegisterScreen from '../screens/Profile/Register';
 import ForgotPasswordScreen from '../screens/Profile/ForgotPassword';
 import ResetPasswordScreen from '../screens/Profile/ResetPassword';
