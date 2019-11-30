@@ -17,7 +17,6 @@ class ResetPassword extends React.Component {
     const { navigation } = this.props;
 
     return (
-      <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
         <Block flex style={styles.container}>
           <StatusBar hidden />
             <Block flex center>
@@ -84,7 +83,6 @@ class ResetPassword extends React.Component {
               </Block>
           </Block>
         </Block>
-      </KeyboardAvoidingView>
     );
   }
 }
@@ -112,7 +110,7 @@ const styles = StyleSheet.create({
     marginTop: '-80%'
   },
   title: {
-    marginTop:'-90%'
+    marginTop:'-120%'
   },
   subTitle: {
     marginTop: 20

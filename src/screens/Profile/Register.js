@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, ImageBackground, Dimensions, StatusBar, KeyboardAvoidingView } from "react-native";
-import { Block, Checkbox, Text } from "galio-framework";
+import { Block, Checkbox, Text, Input } from "galio-framework";
 
-import { Button, Icon, Input } from "../../components";
+import { Button } from "../../components";
 import { Images, argonTheme } from "../../constants";
 
 import SocialButtons from '../../components/SocialButtons';
@@ -28,14 +28,14 @@ class Register extends React.Component {
           <Block flex middle>
             <Block style={styles.registerContainer}>
               <Block flex={0.25} middle style={styles.socialConnect}>
-                <Text color="#8898AA" size={12}>
+                <Text style={styles.textSignIn}>
                   {i18n.t('register.signInTitle')}
                 </Text>
                 <SocialButtons/>
               </Block>
               <Block flex>
-                <Block flex={0.17} middle>
-                  <Text color="#8898AA" size={12}>
+                <Block flex={0.1} middle>
+                  <Text style={styles.textSignIn}>
                   {i18n.t('register.signInSubtitle')}
                   </Text>
                 </Block>
@@ -45,34 +45,16 @@ class Register extends React.Component {
                     behavior="padding"
                     enabled
                   >
-                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+                    <Block width={width * 0.8} >
                       <Input
                         borderless
                         placeholder={i18n.t('register.name')}
-                        iconContent={
-                          <Icon
-                            size={16}
-                            color={argonTheme.COLORS.ICON}
-                            name="hat-3"
-                            family="ArgonExtra"
-                            style={styles.inputIcons}
-                          />
-                        }
                       />
                     </Block>
-                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+                    <Block width={width * 0.8} >
                       <Input
                         borderless
                         placeholder={i18n.t('register.email')}
-                        iconContent={
-                          <Icon
-                            size={16}
-                            color={argonTheme.COLORS.ICON}
-                            name="ic_mail_24px"
-                            family="ArgonExtra"
-                            style={styles.inputIcons}
-                          />
-                        }
                       />
                     </Block>
                     <Block width={width * 0.8}>
@@ -80,15 +62,11 @@ class Register extends React.Component {
                         password
                         borderless
                         placeholder={i18n.t('register.password')}
-                        iconContent={
-                          <Icon
-                            size={16}
-                            color={argonTheme.COLORS.ICON}
-                            name="padlock-unlocked"
-                            family="ArgonExtra"
-                            style={styles.inputIcons}
-                          />
-                        }
+                      />
+                      <Input
+                        password
+                        borderless
+                        placeholder={i18n.t('Resetpassword.confirmPassword')}
                       />
                       <Block row style={styles.passwordCheck}>
                         <Text size={12} color={argonTheme.COLORS.MUTED}>
@@ -138,6 +116,11 @@ class Register extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  textSignIn: {
+    backgroundColor: 'transparent',
+    color:"#8898AA",
+    fontSize: 12,
+  },
   inputIcon:{
     width:20,
     height:20,
@@ -147,7 +130,7 @@ const styles = StyleSheet.create({
     width: width * 0.9,
     height: height * 0.8,
     backgroundColor: "#F4F5F7",
-    borderRadius: 4,
+    borderRadius: 10,
     shadowColor: argonTheme.COLORS.BLACK,
     shadowOffset: {
       width: 0,

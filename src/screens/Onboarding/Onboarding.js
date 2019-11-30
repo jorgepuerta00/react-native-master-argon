@@ -28,17 +28,17 @@ class Onboarding extends React.Component {
             <Block flex space="around" style={{ zIndex: 2 }}>
               <Block style={styles.title}>
                 <Block>
-                  <Text color="white" size={50}>
+                  <Text style={styles.titleText}>
                     {i18n.t('onboarding.title')}
                   </Text>
                 </Block>
                 <Block>
-                  <Text color="white" size={50}>
+                  <Text style={styles.titleText}>
                     {i18n.t('onboarding.subtitle')}
                   </Text>
                 </Block>
                 <Block style={styles.subTitle}>
-                  <Text color="white" size={16}>
+                  <Text style={styles.subtitleText}>
                     {i18n.t('onboarding.loading')}
                   </Text>
                 </Block>
@@ -51,6 +51,14 @@ class Onboarding extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  titleText: {
+    color:"white",
+    fontSize: 50,
+  },
+  subtitleText: {
+    color:"white",
+    fontSize: 16,
+  },
   container: {
     backgroundColor: theme.COLORS.BLACK
   },

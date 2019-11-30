@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { Alert, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { ExpandableCalendar, AgendaList, CalendarProvider, LocaleConfig } from 'react-native-calendars';
-import ThumbnailButton from '../../components/ThumbnailButton';
+import Thumbnail from '../../components/Thumbnail';
 import { Block } from "galio-framework";
 import moment from 'moment';
 require("moment/min/locales.min");
@@ -62,13 +62,6 @@ const people = [
 const ITEMS = [{
   title: dateString, 
   data: [
-          {hour: '12:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
-          {hour: '01:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
-          {hour: '02:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
-          {hour: '03:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
-          {hour: '04:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
-          {hour: '05:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},                        
-          {hour: '06:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
           {hour: '07:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
           {hour: '08:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
           {hour: '09:00 am', duration: '', title: i18n.t('appointment.avaible'), avaible:true}, 
@@ -79,11 +72,11 @@ const ITEMS = [{
           {hour: '02:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false},
           {hour: '03:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
           {hour: '04:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
-          {hour: '05:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false},
-          {hour: '06:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
-          {hour: '07:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
-          {hour: '08:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
-          {hour: '09:00 pm', duration: '', title: i18n.t('appointment.busy'), avaible:false}, 
+          {hour: '05:00 pm', duration: '', title: i18n.t('appointment.avaible'), avaible:true},
+          {hour: '06:00 pm', duration: '', title: i18n.t('appointment.avaible'), avaible:true}, 
+          {hour: '07:00 pm', duration: '', title: i18n.t('appointment.avaible'), avaible:true}, 
+          {hour: '08:00 pm', duration: '', title: i18n.t('appointment.avaible'), avaible:true}, 
+          {hour: '09:00 pm', duration: '', title: i18n.t('appointment.avaible'), avaible:true}, 
           {hour: '10:00 pm', duration: '', title: i18n.t('appointment.avaible'), avaible:true}, 
           {hour: '11:00 pm', duration: '', title: i18n.t('appointment.avaible'), avaible:true}
       ]},  
@@ -209,9 +202,9 @@ export default class Appointment extends Component {
   render() {    
     return (
       <Block flex>
-        <ThumbnailButton 
+        <Thumbnail 
           data={people}>
-        </ThumbnailButton>        
+        </Thumbnail>        
         <CalendarProvider
           date={this.state.date} 
           onDateChanged={this.onDateChanged} 

@@ -16,7 +16,14 @@ const assetImages = [
   Images.Pro,
   Images.ArgonLogo,
   Images.iOSLogo,
-  Images.androidLogo
+  Images.androidLogo,
+  Images.ProfileBackground,
+  Images.ProfilePicture,
+  Images.RegisterBackground,
+  Images.Viewed,
+  Images.Products,
+  Images.GoogleLogo,
+  Images.FacebookLogo
 ];
 
 // cache product images
